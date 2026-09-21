@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block title %}Photos{% endblock %}{% block content %}
+<div class="page"><h1 class="section-title">PHOTOS</h1><div class="photo-grid">{% for p in pics %}<div><img src="{{url_for('data_file',name=p)}}"><small>{{p}}</small></div>{% endfor %}</div></div>{% endblock %}

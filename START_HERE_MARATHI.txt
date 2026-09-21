@@ -1,0 +1,27 @@
+FACE RECOGNITION ATTENDANCE SYSTEM - WEB APPLICATION
+
+हा तुमच्या uploaded desktop project चा browser/web version आहे.
+
+1) हा folder VS Code मध्ये उघडा.
+2) .env.example ची copy करून नाव .env करा.
+3) .env मध्ये DB_PASSWORD= च्या पुढे तुमचा स्वतःचा MySQL password टाका.
+   Password कोणालाही share करू नका.
+4) VS Code Terminal मध्ये:
+   pip install -r requirements.txt
+5) नंतर:
+   python app.py
+6) Browser मध्ये:
+   http://127.0.0.1:5000
+
+महत्त्वाचे:
+- MySQL database नाव: systemface attendance
+- Existing student/register tables वापरता येतात.
+- Browser camera साठी Chrome/Edge मध्ये Camera permission Allow करा.
+- Student Details मधून browser camera वापरून face samples घेता येतात.
+- Train Data मधून classifier train करता येतो.
+- Face Detector browser camera वापरतो.
+- Attendance rohit.csv मध्ये save होते.
+- जुने project images, data samples आणि classifier ठेवले आहेत.
+
+UI बद्दल:
+Tkinter चे exact window widgets browser मध्ये चालत नाहीत. म्हणून original project चे labels, buttons, images, colors, layout आणि page structure शक्य तितके तसेच ठेवून HTML/CSS मध्ये रूपांतर केले आहे.

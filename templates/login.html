@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Login System{% endblock %}{% block content %}
+<div class="auth-page bg-face"><div class="login-card">
+<img src="{{url_for('static',filename='images/honey.jpeg')}}" class="profile-img"><h1>Get Started</h1>
+<form method="post"><label>Email / Username</label><input name="email" required><label>Password</label><input type="password" name="password" required>
+<button class="btn red">Login</button></form>
+<div class="auth-actions"><a href="{{url_for('register')}}">Register Now</a><a href="{{url_for('forgot')}}">Forgot Password?</a></div>
+</div></div>{% endblock %}

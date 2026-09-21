@@ -1,0 +1,17 @@
+{% extends "base.html" %}{% block title %}Student Details{% endblock %}{% block content %}
+<div class="page student-page">
+<div class="image-strip"><img src="{{url_for('static',filename='images/student1.jpeg')}}"><img src="{{url_for('static',filename='images/student3.jpeg')}}"><img src="{{url_for('static',filename='images/student2.jpeg')}}"></div>
+<h1 class="section-title">STUDENT DETAILS</h1><div class="student-layout">
+<div class="panel form-panel"><h2>Student Details</h2><form method="post" action="{{url_for('student_save')}}" id="studentForm">
+<div class="grid2">
+<label>Department<select name="dep"><option>Select Department</option>{% for x in ['computer','IT','AIML','MECH','CIVIL','DS','ECS'] %}<option>{{x}}</option>{% endfor %}</select></label>
+<label>Course<select name="course"><option>Select Course</option>{% for x in ['FE','SE','TE','BE'] %}<option>{{x}}</option>{% endfor %}</select></label>
+<label>Year<select name="year"><option>Select Year</option>{% for x in ['2023-24','2024-25','2025-26','2026-27'] %}<option>{{x}}</option>{% endfor %}</select></label>
+<label>Semester<select name="sem"><option>Select Semester</option>{% for x in ['SEM 1','SEM 2','SEM3','SEM 4','SEM 5','SEM 6','SEM 7','SEM 8'] %}<option>{{x}}</option>{% endfor %}</select></label>
+<label>StudentID<input name="id" id="sid" required></label><label>Student Name<input name="name" required></label><label>Division<select name="div">{% for x in ['A','B','C','D','E','F'] %}<option>{{x}}</option>{% endfor %}</select></label><label>Roll No<input name="roll"></label>
+<label>Gender<select name="gender"><option>Male</option><option>Female</option><option>Other</option></select></label><label>DOB<input name="dob"></label><label>Email<input type="email" name="email"></label><label>Phone No<input name="phone"></label><label>Address<input name="address"></label><label>Teacher Name<input name="teacher"></label>
+</div><label>Photo Sample<select name="photo"><option>Yes</option><option>No</option></select></label>
+<div class="button-row"><button class="btn blue">Save</button><button class="btn blue" type="reset">Reset</button></div></form>
+<hr><h2>Take Photo Sample</h2><div class="camera-mini"><video id="studentVideo" autoplay playsinline></video><canvas id="studentCanvas" hidden></canvas></div><div class="button-row"><button class="btn blue" type="button" onclick="startStudentCamera()">Start Camera</button><button class="btn blue" type="button" onclick="captureStudent()">Take Photo Sample</button></div><div id="captureMsg"></div></div>
+<div class="panel table-panel"><div class="searchbar"><form><select name="by"><option>Roll No</option><option>Phone No</option></select><input name="search" value="{{search}}" placeholder="Search"><button class="btn blue">Search</button><a class="btn blue" href="{{url_for('students')}}">Show All</a></form></div>
+<div class="table-scroll"><table><thead><tr>{% for h in ['Dep','Course','Year','Sem','ID','Name','Div','Roll No','Gender','DOB','Email','Phone No','Address','Teacher','Photo'] %}<th>{{h}}</th>{% endfor %}</tr></thead><tbody>{% for r in rows %}<tr>{% for v in r %}<td>{{v}}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div></div></div></div>{% endblock %}

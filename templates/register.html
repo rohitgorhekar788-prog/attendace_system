@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}Register System{% endblock %}{% block content %}
+<div class="auth-page bg-sheet"><div class="register-card"><div class="register-left"><img src="{{url_for('static',filename='images/ganesh.jpeg')}}"></div><div class="register-form"><h1>REGISTER HERE</h1>
+<form method="post" class="grid2">
+<label>First Name<input name="fname" required></label><label>Last Name<input name="lname" required></label>
+<label>Contact No<input name="contact" required></label><label>Email<input type="email" name="email" required></label>
+<label>Security Question<select name="securityQ" required><option value="">Select Option</option><option>Your Birth Place</option><option>Your Pet Name</option><option>Your Favorite Book</option></select></label>
+<label>Security Answer<input name="securityA" required></label><label>Password<input type="password" name="password" required></label>
+<div class="form-buttons"><button class="btn green">Register Now</button><a class="btn blue" href="{{url_for('login')}}">Login Now</a></div></form></div></div></div>{% endblock %}

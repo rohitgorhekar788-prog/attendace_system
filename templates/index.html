@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Face Recognition Attendance System{% endblock %}{% block content %}
+<div class="dashboard"><div class="titlebar"><span id="clock"></span><b>FACE RECOGNITION ATTENDANCE SYSTEM</b><span>{{slot}}</span></div>
+<div class="dashboard-grid">
+{% set cards=[('student.jpeg','Student Details','students'),('face.jpeg','Face Detector','recognition'),('attendance.jpeg','Attendance','attendance'),('help.jpeg','Help Desk','help_page'),('train.jpeg','Train Data','train'),('photos.jpeg','Photos','photos'),('devoloper.jpeg','Devoloper','developer'),('exit.jpeg','Exit','logout')] %}
+{% for image,label,route in cards %}
+<a class="dash-card" href="{{url_for(route)}}"><img src="{{url_for('static',filename='images/'+image)}}"><div>{{label}}</div></a>
+{% endfor %}</div></div>{% endblock %}

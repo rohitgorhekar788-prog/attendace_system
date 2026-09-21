@@ -1,0 +1,12 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}Face Recognition System{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head><body>
+{% if session.get('user') %}
+<nav class="topnav"><div class="brand">FACE RECOGNITION ATTENDANCE SYSTEM</div>
+<div class="navlinks"><a href="{{url_for('index')}}">Home</a><a href="{{url_for('students')}}">Student Details</a><a href="{{url_for('recognition')}}">Face Detector</a><a href="{{url_for('attendance')}}">Attendance</a><a href="{{url_for('train')}}">Train Data</a><a href="{{url_for('photos')}}">Photos</a><a href="{{url_for('developer')}}">Developer</a><a href="{{url_for('help_page')}}">Help</a><a href="{{url_for('logout')}}">Exit</a></div></nav>
+{% endif %}
+{% with messages=get_flashed_messages(with_categories=true) %}{% if messages %}<div class="flashwrap">{% for cat,msg in messages %}<div class="flash {{cat}}">{{msg}}</div>{% endfor %}</div>{% endif %}{% endwith %}
+{% block content %}{% endblock %}
+<script src="{{url_for('static',filename='js/app.js')}}"></script></body></html>
