@@ -28,7 +28,7 @@ app.secret_key = os.getenv("SECRET_KEY", "face-attendance-change-this-secret")
 DB_CONFIG = {
     "host": os.getenv("DB_HOST", "localhost"),
     "user": os.getenv("DB_USER", "root"),
-    "password": os.getenv("DB_PASSWORD", "aadnya2901"),
+    "password": os.getenv("DB_PASSWORD", ""),
     "database": os.getenv("DB_NAME", "systemface attendance"),
 }
 
